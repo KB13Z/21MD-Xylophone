@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/images/wood-background.jpg');
+  background-size: cover;
+  cursor: url('./assets/images/mallet.png'), auto;
+  max-width: 1550px;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header span {
+  position: absolute;
+  bottom: -50px;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: animate 4s linear infinite;
+  z-index: -1;
+}
+
+header span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.25) translate(-70%, -70%);
+  background: radial-gradient(white, transparent);
+  border-radius: 50%;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-1200%);
+    opacity: 0;
+  }
+}
+
+h1 {
+  margin: 0;
+  color:brown;
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  text-shadow: 1px 1px 0 #ff0000;
+}
+
+.xylophone-section {
+  margin-top: 5vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: sparkleAnimation 1s linear infinite;
+  opacity: 0;
+}
+
+@keyframes sparkleAnimation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.upper-bar {
+  width: 90%;
+  height: 4vh;
+  background-color: brown;
+  transform: rotate(3deg);
+  box-shadow: 0 0 10px #ff0000;
+  margin-left: 7vw;
+  margin-top: 12.5vh;
+  position: absolute;
+}
+
+.bottom-bar {
+  width: 90%;
+  height: 4vh;
+  background-color: brown;
+  transform: rotate(-3deg);
+  box-shadow: 0 0 10px #ff0000;
+  margin-top: 54vh;
+  margin-left: 7vw;
+  position: absolute;
+}
+
+.xylophone {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-left: 6vw;
+  margin-right: 1.5vw;
+}
+
+.key {
+  width: 5vw;
+  height: 70vh;
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.key:hover {
+  box-shadow: 0 0 20px white;
+  transition: 0.4s;
+}
+
+.first-key {
+  background-color: violet;
+  box-shadow: 0 0 10px violet;
+}
+
+.second-key {
+  background-color: indigo;
+  box-shadow: 0 0 10px indigo;
+  height: 67vh;
+}
+
+.third-key {
+  background-color: blue;
+  box-shadow: 0 0 10px blue;
+  height: 64vh;
+}
+
+.fourth-key {
+  background-color: green;
+  box-shadow: 0 0 10px green;
+  height: 61vh;
+}
+
+.fifth-key {
+  background-color: yellow;
+  box-shadow: 0 0 10px yellow;
+  height: 58vh;
+}
+
+.sixth-key {
+  background-color: orange;
+  box-shadow: 0 0 10px orange;
+  height: 55vh;
+}
+
+.seventh-key {
+  background-color: red;
+  box-shadow: 0 0 10px red;
+  height: 52vh;
+}
+
+.eighth-key {
+  background-color: pink;
+  box-shadow: 0 0 10px pink;
+  height: 49vh;
+}
+
+.ninth-key {
+  background-color: purple;
+  box-shadow: 0 0 10px purple;
+  height: 46vh;
+}
+
+.tenth-key {
+  background-color: magenta;
+  box-shadow: 0 0 10px magenta;
+  height: 43vh;
+}
+
+.upper-circle {
+  width: 15px;
+  height: 15px;
+  background-color: none;
+  border: 4px solid gray;
+  border-radius: 50%;
+}
+
+.note {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  color: white;
+  text-shadow: 0px 0px 10px white;
+}
+
+.bottom-circle {
+  width: 15px;
+  height: 15px;
+  background-color: none;
+  border: 4px solid gray;
+  border-radius: 50%;
+}
+
+@keyframes rainbowAnimation {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+.key.clicked {
+  animation: rainbowAnimation 1s linear infinite;
+  background: linear-gradient(to bottom, indigo, blue, green, yellow, orange, red, pink, magenta);
+  background-size: 100% 700%;
+}
